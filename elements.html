@@ -56,27 +56,4 @@ title: QuickHire
 				<hr />
 
 
-				<h5>QuickHire Sample Code</h5>
-				<pre><code># LDA MODEL
-
-lda_model = gensim.models.LdaMulticore(corpus=corpus,
-                                           id2word=id2word,
-                                           num_topics=100,
-                                           random_state=100,
-                                           chunksize=100,
-                                           passes=10,
-                                           alpha='asymmetric',
-                                           eta=.9,
-                                           per_word_topics=True)
-
-
-from gensim.models import CoherenceModel
-
-coherence_model_lda = CoherenceModel(model=lda_model, texts=data_lemmatized, dictionary=id2word, coherence='c_v')
-coherence_lda = coherence_model_lda.get_coherence()
-print('\nCoherence Score: ', coherence_lda)
-
-Coherence Score:  0.6302895082774027
-
-</code></pre>
 	</section>
